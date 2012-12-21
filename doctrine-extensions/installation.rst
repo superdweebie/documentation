@@ -13,4 +13,5 @@ You will need this in your `composer.json` also::
 
     "minimum-stability": "dev"
 
-Alternately, you can get the source from http://github.com/superdweebie/doctrineExtensions.
+Doctrine Extensions will install all doctrine dependencies. It also assumes that
+you have an instance of `mongoDB<http://mongodb.org>`_ running, and the `mongoDB php driver<http://www.mongodb.org/display/DOCS/PHP+Language+Center>`_ installed.

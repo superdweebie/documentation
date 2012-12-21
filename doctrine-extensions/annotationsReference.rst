@@ -25,6 +25,22 @@ Annotations Reference
 
 **@AccessControl\Update(true | false)** Used to turn on|off all access control checks for the 'update' action.
 
-**@Getter(methodName)** Defines a non-standard getter
+**@ClassName** Add the class name property when serializing.
 
-**@Setter(methodName)** Defines a non-standard setter
+**@Discriminator** Add the discriminator property when serializing.
+
+**@Eager** Use the eager reference serializer.
+
+**@Getter(methodName)** Defines a non-standard getter.
+
+**@Ignore(null | 'ignore_always' | 'ignore_none' | 'ignore_when_serializing' | 'ignore_when_unserializing')** Tell the serializer to selectively ignore properties.
+
+**@Lazy** Use the lazy reference serializer.
+
+**@Setter(methodName)** Defines a non-standard setter.
+
+**@Serializer(array)** Can contain a list of other annotations to control the behaviour of the Serializer.
+
+**@ReferenceSerializer(className)** Defines the serializer use use for a reference.
+
+

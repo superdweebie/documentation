@@ -9,6 +9,8 @@ Doctrine Extensions
    zf2integration
    custom
    annotationsReference
+   testing
+   issues
    accessControl
    accessor
    annotation
@@ -39,6 +41,8 @@ Using Doctrine Extensions
 * :doc:`zf2integration`
 * :doc:`custom`
 * :doc:`annotationsReference`
+* :doc:`testing`
+* :doc:`issues`
 
 Extensions Reference
 --------------------
@@ -73,6 +77,7 @@ Supports encryption and hashing of document properties.
 
 :doc:`serializer`
 ^^^^^^^^^^^^^^^^^
+Can serialize and unserialize documents to php arrays and json strings.
 
 :doc:`softDelete`
 ^^^^^^^^^^^^^^^^^
