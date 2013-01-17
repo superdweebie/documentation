@@ -10,6 +10,7 @@ Validator
    sijitIntegration
    abstractValidator
    alphaValidator
+   validatorGroup
 
 A collection of validators.
 

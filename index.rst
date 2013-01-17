@@ -26,13 +26,9 @@ find some useful components, without using the complete collection.
 
 The technologies glued together are:
 
-* `twitter bootstrap <http://twitter.github.com/bootstrap/>`_ client side look and feel
 * `dojo <http://dojotoolkit.org/>`_ client side javascript framework
 * `zendframework2 <http://framework.zend.com/>`_ server side php framework
 * `doctrineMongoODM <http://docs.doctrine-project.org/projects/doctrine-mongodb-odm/en/latest/index.html>`_ php object to document mapper for mongoDB
-
-Sds does not do every aspect of integration between these libraries. Where possible, Sds leverages existing
-integrations, such as `dojo-bootstrap <https://github.com/xsokev/Dojo-Bootstrap/>`_ and `DoctrineMongoODMModule <https://github.com/doctrine/DoctrineMongoODMModule>`_.
 
 All Sds libraries support `composer <http://getcomposer.org/>`_ for **installation**, and that is the recommended
 instalation method. For specific instructions, see the docs of individual libraries.

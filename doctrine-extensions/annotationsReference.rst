@@ -31,16 +31,20 @@ Annotations Reference
 
 **@Eager** Use the eager reference serializer.
 
+**@Freeze** Annotates a property to bed used to flag if a document is frozen.
+
 **@Getter(methodName)** Defines a non-standard getter.
 
 **@Ignore(null | 'ignore_always' | 'ignore_none' | 'ignore_when_serializing' | 'ignore_when_unserializing')** Tell the serializer to selectively ignore properties.
 
 **@Lazy** Use the lazy reference serializer.
 
+**@Readonly** Marks a field as read only.
+
+**@ReferenceSerializer(className)** Defines the serializer use use for a reference.
+
 **@Setter(methodName)** Defines a non-standard setter.
 
 **@Serializer(array)** Can contain a list of other annotations to control the behaviour of the Serializer.
 
-**@ReferenceSerializer(className)** Defines the serializer use use for a reference.
-
-
+**@SoftDelete** Annotates a property to bed used to flag if a document is soft deleted.

@@ -162,37 +162,7 @@ Both the lazy and eager seralizers can be involked with the shorthand annotation
 
 Alternate ReferenceSerializers must implement Sds\DoctrineExtensions\Serializer\Reference\ReferenceSerializerInterface
 
-Date Serializer
-^^^^^^^^^^^^^^^
-
-TODO
-
 Custom Type Serializers
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The provided date serializer is an example of a custom type serializer. A custom type serializer
-can be registered to handle the serialization of a mongoDB type. Type serializers can be registered
-with the ``typeSerializers`` key of ``ExtensionConfig``. For example, the following config 
-would mean that all string serializations would be passed off to ``MyStringSerializer``
-
-    ['Sds\DoctrineExtensions\Serializer' => [
-        'typeSerializers' => [
-            'string' => 'MyStringSerializer'
-        ]
-    ]]
-
-A custom type serializer must implement the ``Type\TypeSerializerInterface`` interface. For example,
-this serializer would change the case of the first letter::
-
-    use Sds\DoctrineExtensions\Serializer\Type\TypeSerializerInterface;
-
-    class MyStringSerializer implements TypeSerializerInterface {
-
-        public static function serialize($value) {
-            return ucfirst($value);
-        }
-
-        public static function unserialize($value) {
-            return lcfirst($value);
-        }
-    }
+TODO

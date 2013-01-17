@@ -65,15 +65,19 @@ Supports encryption and hashing of document properties.
 
 :doc:`dojo`
 ^^^^^^^^^^^
+Generates javascript so doctrine documents can be used with the dojo javascript framework
 
 :doc:`freeze`
 ^^^^^^^^^^^^^
+Makes a document 'freezable'. A frozen document cannot be changed until it is thawed.
 
 :doc:`readonly`
 ^^^^^^^^^^^^^^^
+Makes a field 'read only'. A read only field can be populated once, but never updated or deleted.
 
 :doc:`rest`
 ^^^^^^^^^^^
+Defines a rest endpoint to access the document.
 
 :doc:`serializer`
 ^^^^^^^^^^^^^^^^^
@@ -81,9 +85,11 @@ Can serialize and unserialize documents to php arrays and json strings.
 
 :doc:`softDelete`
 ^^^^^^^^^^^^^^^^^
+Makes a document 'soft deleteable'.
 
 :doc:`stamp`
 ^^^^^^^^^^^^
+Stamps a document indicating who and when it was created or last changed.
 
 :doc:`state`
 ^^^^^^^^^^^^
