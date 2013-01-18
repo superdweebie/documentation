@@ -9,6 +9,7 @@ Config Options
 * **annotationReader** Used to read annotations
 * **classNameProperty** Property name used to store the class name, if the class name is serialized. Defaults to ``_className``
 * **typeSerializers** An array of custom serialziers for MongoDB datatypes.
+* **maxNestingDepth** Integer. Maximum depth to serialize reference if an eager style reference serializer is used.
 
 Basic Use
 ^^^^^^^^^
@@ -138,7 +139,7 @@ By default references will be serialized to an array like this::
 
 The $ref style of referencing is what Mongo uses internally. The format of the reference is given with the expectation it could be used as a URL to a REST API.
 
-The default behaviour uses the lazy serializer. However this can be overridden by defineing an alternative ``ReferenceSerializer`` as a property annotation::
+The default behaviour uses the RefLazy serializer. However this can be overridden by defineing an alternative ``ReferenceSerializer`` as a property annotation::
 
     /**
      * @ODM\ReferenceMany(targetDocument="MyTargetDocument")
@@ -146,7 +147,9 @@ The default behaviour uses the lazy serializer. However this can be overridden b
      */
     protected $myDocumentProperty;
 
-One alternate ReferenceSerializer is already included with Doctrine Extensions. It is the eager serializer. The eager serializer will serialize references as if they were embedded documents. It can be used like this::
+Two alternate ReferenceSerializers are already included with Doctrine Extensions:
+
+* **SimpleLazy** will serialize a reference as the mongo id. It can be used like this::
 
     /**
      * @ODM\ReferenceMany(targetDocument="MyTargetDocument")
@@ -154,11 +157,22 @@ One alternate ReferenceSerializer is already included with Doctrine Extensions. 
      */
     protected $myDocumentProperty;
 
-Both the lazy and eager seralizers can be involked with the shorthand annotations::
+* **Eager** will serialize references as if they were embedded documents. It can be used like this::
 
-    @Sds\Serializer(@Sds\Lazy))
+    /**
+     * @ODM\ReferenceMany(targetDocument="MyTargetDocument")
+     * @Sds\Serializer(@Sds\ReferenceSerializer('Sds\DoctrineExtensions\Serializer\Reference\Eager'))
+     */
+    protected $myDocumentProperty;
+
+When using the Eager serializer, the `maxNestingDepth` configuration option will control how deep the Eager serializer
+will go into a tree of references.
+
+Provided seralizers can be involked with the shorthand annotations::
+
+    @Sds\Serializer(@Sds\RefLazy))
+    @Sds\Serializer(@Sds\SimpleLazy))
     @Sds\Serializer(@Sds\Eager))
-
 
 Alternate ReferenceSerializers must implement Sds\DoctrineExtensions\Serializer\Reference\ReferenceSerializerInterface
 
