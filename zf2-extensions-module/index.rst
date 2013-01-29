@@ -1,17 +1,19 @@
-Sds Zend Framework2 Extensions Module
+Sds Zend Framework 2 Extensions Module
 =====================================
+
+.. toctree::
+   :hidden:
+
+   installation
 
 A range of small extensions to zf2 classes used by other Sds zf2 modules.
 
-A zf2 controllers for Json Rpc and Json Rest.
+Using Zf2 Extensions Module
+---------------------------
 
-#Intallation
+* :doc:`installation`
 
-Add the following to your project's composer.json:
 
-    "require": {
-        "superdweebie/json-controllers": "dev-master"
-    }
 
 #Rpc Use
 

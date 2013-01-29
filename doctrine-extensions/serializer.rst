@@ -176,7 +176,56 @@ Provided seralizers can be involked with the shorthand annotations::
 
 Alternate ReferenceSerializers must implement Sds\DoctrineExtensions\Serializer\Reference\ReferenceSerializerInterface
 
+Date Serializer
+^^^^^^^^^^^^^^^
+
+Fields of type ``date`` are serialized by default with ``Sds\DoctrineExtensions\Serializer\Type\DateSerializer``.
+ 
+Dates will be serialized into this format::
+
+    TODO add format
+
+Likewise, to unserialize dates correctly, they must provided in this format.
+
+To override this default date serialization, see the Custom Type Serizlizers section below.
+
 Custom Type Serializers
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Each document field has an associated type, such as ``string`` or ``date``. Serialization may be customized by type.
+
+First create a class which implements the ``Sds\DoctrineExtensions\Serializer\Type\TypeSerializerInterface``.
+You will need to define ``serialize`` and ``unserialize`` methods.
+
+For example, this class will uppercase the first letter of every string when serializing, and
+lower case the first letter when unserializing::
+
+    use Sds\DoctrineExtensions\Serializer\Type\TypeSerializerInterface;
+
+    class MyStringSerializer implements TypeSerializerInterface {
+
+        public static function serialize($value) {
+            return ucfirst($value);
+        }
+
+        public static function unserialize($value) {
+            return lcfirst($value);
+        }
+    }
+
+Then the class needs to be registered in the extension config::
+
+    'Sds\DoctrineExtensions\Serializer' => [
+        'typeSerializers' => [
+            'string' => 'MyStringSerializer'
+        ]
+    ]
+
+The default Date serializer is an example of a Type Serializer which is regisered by default.
+To over ride it, simply register your own in the extension config::
+
+    'Sds\DoctrineExtensions\Serializer' => [
+        'typeSerializers' => [
+            'date' => 'MyDateSerializer'
+        ]
+    ]

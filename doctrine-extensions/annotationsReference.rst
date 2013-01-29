@@ -43,6 +43,8 @@ Annotations Reference
 
 **@ReferenceSerializer(className)** Defines the serializer use use for a reference.
 
+**@Rest(value=endpoint, basePath=basePath)** Defines a rest endpoint to access the document via a REST interface.
+
 **@Setter(methodName)** Defines a non-standard setter.
 
 **@Serializer(array)** Can contain a list of other annotations to control the behaviour of the Serializer.

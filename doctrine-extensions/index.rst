@@ -38,6 +38,7 @@ Using Doctrine Extensions
 
 * :doc:`installation`
 * :doc:`manifest`
+* :doc:`cli`
 * :doc:`zf2integration`
 * :doc:`custom`
 * :doc:`annotationsReference`
