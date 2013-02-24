@@ -5,7 +5,7 @@ Sds Dojo is a very small helper library for installing the Dojo javascript
 framework and several other third party dojo packages via composer.
 
 Dojo packages are not available on http://packagist.com, so to use them, you will need
-to add the following to your project's root `composer.json`:
+to add the following to your project's root `composer.json`::
 
    "repositories": [{ "type": "composer", "url": "https://raw.github.com/superdweebie/dojo/master" }]
 
@@ -15,17 +15,17 @@ Requireing Dojo
 To require dojo, add the following to your `composer.json`::
 
     "require": {
-        "dojo/dojo"   : "1.8.1",
-        "dojo/dijit"  : "1.8.1",
-        "dojo/dojox"  : "1.8.1",
-        "dojo/util"   : "1.8.1"
+        "dojo/dojo"   : "1.8.3",
+        "dojo/dijit"  : "1.8.3",
+        "dojo/dojox"  : "1.8.3",
+        "dojo/util"   : "1.8.3"
     }
 
 Alternately, you can use this for shorthand. It has the same effect as the
 `require` above::
 
     "require": {
-        "superdweebie/dojo" : "1.8.1"
+        "superdweebie/dojo" : "1.8.3"
     }
 
 Running `composer.phar` will create and fill the following directories::
@@ -60,7 +60,13 @@ Sijit
 
 :doc:`Sijit </sijit/index>` is a library of dojo extensions which is part of Sds.
 
-Install sijit, with::
+Depending which version you require, install sijit, with::
+
+    "require": {
+        "dojo/Sds" : "0.1"
+    }
+
+or::
 
     "require": {
         "dojo/Sds" : "dev-master"
@@ -78,12 +84,24 @@ dependency of sijit.
 Install with::
 
     "require": {
+        "dojo/bootstrap" : "v1.0"
+    }
+
+or::
+
+    "require": {
+        "dojo/bootstrap" : "v1.2"
+    }
+
+or::
+
+    "require": {
         "dojo/bootstrap" : "dev-master"
     }
 
 This will install dojo-bootstrap to `vendor/dojo/bootstrap`
 
-Twiiter bootstrap
+Twitter bootstrap
 ^^^^^^^^^^^^^^^^^
 
 This is twitter bootstrap itself. See the github repo here:
@@ -92,7 +110,19 @@ http://github.com/twitter/bootstrap
 Install with::
 
     "require": {
+        "twitter/bootstrap" : "2.2.2"
+    }
+
+or::
+
+    "require": {
         "twitter/bootstrap" : "2.1.1"
+    }
+
+or::
+
+    "require": {
+        "twitter/bootstrap" : "2.1.0"
     }
 
 This will install twitter bootstrap to `vendor/twitter/bootstrap`
@@ -107,6 +137,12 @@ Install with::
 
     "require": {
         "fort-awesome/font-awesome" : "2.0.0"
+    }
+
+or::
+
+    "require": {
+        "fort-awesome/font-awesome" : "3.0.1"
     }
 
 This will install Font-awesome to `vendor/fort-awesome/font-awesome`
